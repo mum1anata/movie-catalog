@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кинотека — просмотр фильмов и трейлеров</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="header">
+  <div class="container header__inner">
+    <h1 class="logo">Кинотека</h1>
+    <div class="controls">
+      <input
+        type="text"
+        id="searchInput"
+        class="search-input"
+        placeholder="Поиск фильма..."
+      />
+      <select id="genreSelect" class="genre-select">
+        <option value="all">Все жанры</option>
+        <option value="фантастика">Фантастика</option>
+        <option value="драма">Драма</option>
+        <option value="комедия">Комедия</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section id="moviesGrid" class="movies-grid"></section>
+</main>
+
+<!-- Модальное окно просмотра -->
+<div id="playerModal" class="modal hidden" aria-hidden="true">
+  <div class="modal__content">
+    <button id="closeModalBtn" class="modal__close" title="Закрыть">&times;</button>
+    <h2 id="modalTitle" class="modal__title"></h2>
+    <p id="modalMeta" class="modal__meta"></p>
+    <div class="video-wrapper">
+      <iframe
+        id="videoFrame"
+        src=""
+        title="Видеоплеер"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <p id="modalDescription" class="modal__description"></p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
